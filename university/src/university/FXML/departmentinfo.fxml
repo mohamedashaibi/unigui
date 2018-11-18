@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<BorderPane fx:id="borderPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="university.FXMLControllers.DepartmentInfoController">
+   <top>
+      <ToolBar prefHeight="40.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+        <items>
+          <Button fx:id="newDepartmentBtn" mnemonicParsing="false" />
+            <Button fx:id="editDepartmentBtn" mnemonicParsing="false" />
+            <Button fx:id="deleteDepartmentBtn" mnemonicParsing="false" />
+        </items>
+      </ToolBar>
+   </top>
+   <left>
+      <ListView fx:id="departmentListView" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+   </left>
+   <center>
+      <TabPane BorderPane.alignment="CENTER">
+         <tabs>
+            <Tab closable="false" text="View">
+               <content>
+                  <AnchorPane>
+                     <children>
+                        <GridPane alignment="CENTER" prefWidth="200.0" AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="50.0" AnchorPane.topAnchor="20.0">
+                          <Label text="Name: " GridPane.columnIndex="0" GridPane.rowIndex="0" />
+                            <TextField fx:id="departmentNameField" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+                          <Label text="Start date: " GridPane.columnIndex="0" GridPane.rowIndex="1" />
+                            <TextField fx:id="departmentStartDateField" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                          <Label text="Dean: " GridPane.columnIndex="0" GridPane.rowIndex="2" />
+                            <ComboBox fx:id="departmentDeanField" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                            <Button fx:id="departmentSaveBtn" onAction="#saveBtnPressed" text="Save" GridPane.columnIndex="0" GridPane.columnSpan="2" GridPane.rowIndex="3" />
+                           <columnConstraints>
+                              <ColumnConstraints />
+                              <ColumnConstraints />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints />
+                              <RowConstraints />
+                              <RowConstraints />
+                              <RowConstraints />
+                           </rowConstraints>  
+                        </GridPane>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+            <Tab closable="false" text="Sub departments">
+               <content>
+                  <BorderPane>
+                      <left>
+                          <ListView fx:id="subdepartmentListView" maxWidth="150.0">
+                           <BorderPane.margin>
+                              <Insets bottom="20.0" left="10.0" right="5.0" top="20.0" />
+                           </BorderPane.margin></ListView>
+                      </left>
+                      <center>
+                          <GridPane alignment="TOP_CENTER" prefWidth="200.0" AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="50.0" AnchorPane.topAnchor="20.0">
+                          <Label text="Name: " GridPane.columnIndex="0" GridPane.rowIndex="0" />
+                            <TextField fx:id="subDepartmentNameField" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+                          <Label text="Start date: " GridPane.columnIndex="0" GridPane.rowIndex="1" />
+                            <TextField fx:id="subDepartmentStartDateField" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                            <Button fx:id="subDepartmentSaveBtn" onAction="#subSaveBtnPressed" text="Save" GridPane.columnIndex="0" GridPane.columnSpan="2" GridPane.rowIndex="2" />
+                            <Button onAction="#addSubDepartment" fx:id="addSubBtn" text="Add" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+                            <Button onAction="#editSubDepartment" fx:id="editSubBtn" text="Edit" GridPane.columnIndex="0" GridPane.rowIndex="3"/>
+                            <Button onAction="#deleteSubDepartment" fx:id="deleteSubBtn" text="Delete" GridPane.columnIndex="1" GridPane.rowIndex="3"/>
+                            <columnConstraints>
+                              <ColumnConstraints />
+                              <ColumnConstraints />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints />
+                              <RowConstraints />
+                              <RowConstraints />
+                              <RowConstraints />
+                           </rowConstraints>
+                           <BorderPane.margin>
+                              <Insets top="30.0" />
+                           </BorderPane.margin>  
+                        </GridPane>
+                      </center>
+                  </BorderPane>
+               </content>
+            </Tab>
+         </tabs>
+      </TabPane>
+   </center>
+</BorderPane>

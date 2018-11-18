@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane fx:id="instructorInfo" prefHeight="600.0" prefWidth="850.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="university.FXMLControllers.InstructorinfoController">
+   <top>
+      <ToolBar BorderPane.alignment="CENTER">
+        <Button fx:id="newInstructorBtn" />
+        <Button fx:id="editInstructorBtn" />
+        <Button fx:id="deleteInstructorBtn" />
+      </ToolBar>
+   </top>
+   <left>
+      <ListView fx:id="instructorListView" prefHeight="600.0" prefWidth="250.0" BorderPane.alignment="CENTER" />
+   </left>
+   <center>
+      <HBox prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <VBox prefWidth="250.0">
+               <children>
+                  <ImageView fx:id="instructorImageView" fitHeight="200.0" fitWidth="250.0" pickOnBounds="true" preserveRatio="true" />
+                  <GridPane prefHeight="289.0" prefWidth="250.0" vgap="5.0">
+                    <Label text="Department: " GridPane.columnIndex="0" GridPane.rowIndex="0" />
+                        <ComboBox fx:id="instructorDepartmentField" prefHeight="26.0" prefWidth="160.0" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+                    <Label prefHeight="32.0" prefWidth="168.0" text="Medical state: " wrapText="true" GridPane.columnIndex="0" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.rowSpan="2" />
+                        <TextArea fx:id="instructorMedicalStateField" GridPane.columnIndex="0" GridPane.columnSpan="2" GridPane.rowIndex="2" GridPane.rowSpan="2" GridPane.valignment="TOP" />    
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="243.0" minWidth="10.0" prefWidth="98.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="189.0" minWidth="7.0" prefWidth="152.0" />
+                        <ColumnConstraints />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints maxHeight="60.0" minHeight="10.0" prefHeight="60.0" vgrow="SOMETIMES" />
+                      <RowConstraints maxHeight="20.0" minHeight="0.0" prefHeight="0.0" vgrow="SOMETIMES" />
+                        <RowConstraints />
+                    </rowConstraints>
+                     <VBox.margin>
+                        <Insets top="50.0" />
+                     </VBox.margin>
+                  </GridPane>
+               </children>
+            </VBox>
+            <GridPane prefWidth="290.0" vgap="30.0">   
+                <Label text="Name: " GridPane.columnIndex="0" GridPane.rowIndex="0" />  
+                    <TextField fx:id="instructorNameField" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+                <Label text="Date of Birth: " GridPane.columnIndex="0" GridPane.rowIndex="1" />
+                    <TextField fx:id="instructorDobField" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                <Label text="Social number: " GridPane.columnIndex="0" GridPane.rowIndex="2" />
+                    <TextField fx:id="instructorSocialNumberField" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                <Label text="Degree: " GridPane.columnIndex="0" GridPane.rowIndex="3" />
+                    <ComboBox fx:id="instructorDegreeField" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                <Label text="Starting date: " GridPane.columnIndex="0" GridPane.rowIndex="4" />
+                    <TextField fx:id="instructorStartDateField" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                <Label text="Bank name: " GridPane.columnIndex="0" GridPane.rowIndex="5" />
+                    <TextField fx:id="instructorBankNameField" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                <Label text="Account number: " GridPane.columnIndex="0" GridPane.rowIndex="6" />
+                    <TextField fx:id="instructorAccountNumberField" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                <Label text="Nationality: " GridPane.columnIndex="0" GridPane.rowIndex="7" />
+                    <ComboBox fx:id="instructorNationalityField" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+               <HBox.margin>
+                  <Insets left="10.0" top="20.0" />
+               </HBox.margin>
+               <columnConstraints>
+                  <ColumnConstraints />
+                  <ColumnConstraints />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints />
+                  <RowConstraints />
+                  <RowConstraints />
+                  <RowConstraints />
+                  <RowConstraints />
+                  <RowConstraints />
+                  <RowConstraints />
+                  <RowConstraints />
+               </rowConstraints>
+            </GridPane>
+         </children>
+         <BorderPane.margin>
+            <Insets />
+         </BorderPane.margin>
+      </HBox>
+   </center>
+</BorderPane>
